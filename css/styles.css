@@ -53,7 +53,8 @@ button {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -77,7 +78,8 @@ button {
   align-items: center;
 }
 
-.header__logo a {
+.header__logo a,
+.header__logo__mobile {
   font-family: var(--secondary-font);
   font-size: 26px;
   font-weight: 700;
@@ -86,7 +88,8 @@ button {
 }
 
 .header__logo span,
-.footer__logo span {
+.footer__logo span,
+.header__logo__mobile span {
   color: var(--blue);
 }
 
@@ -233,6 +236,10 @@ button {
   font-family: Roboto;
   letter-spacing: 0.06em;
   text-align: center;
+}
+
+.mobile__hero__br {
+  display: none;
 }
 
 .booking-button {
@@ -453,6 +460,7 @@ button {
   display: flex;
   height: 251px;
   align-items: center;
+  max-width: 1200px;
 }
 
 .footer__logo {
@@ -888,4 +896,157 @@ button {
   border: none;
   outline: none;
   box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+/* Burger menu styling */
+
+.js-menu-container {
+  display: none;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.is-open {
+  display: block;
+}
+
+.js-open-menu {
+  display: none;
+}
+
+.header__logo__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+  }
+
+  .js-open-menu {
+    display: block;
+  }
+  .header .container {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__logo__mobile {
+    display: block;
+  }
+
+  .button-menu__open {
+  }
+
+  .hero-section .container {
+    height: 400px;
+  }
+
+  .hero-section {
+    background-position: 50% 50%;
+    background-size: 600px 400px;
+  }
+
+  .hero-section__title {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  .mobile__hero__br {
+    display: block;
+  }
+
+  .desktop__hero__br {
+    display: none;
+  }
+
+  .about ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .about li {
+    text-align: center;
+    margin: 0 15px;
+  }
+
+  .about__title {
+    text-align: center;
+  }
+
+  .about__icon {
+    width: 250px;
+  }
+
+  .what-we-do {
+    display: none;
+  }
+
+  .team__img {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .team__img div {
+    width: 448px;
+    height: 620px;
+  }
+
+  .team__img img {
+    width: 450px;
+    height: 460px;
+  }
+
+  .team__socials {
+    height: 68px;
+  }
+
+  .customers__icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .customers {
+    height: auto;
+  }
+
+  .footer {
+    height: 604px;
+    padding: 60px 15px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-form__position {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-form__btn {
+    position: inherit;
+    margin-top: 20px;
+  }
+  .footer-form svg {
+    right: 37%;
+    bottom: -60%;
+  }
 }

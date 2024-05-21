@@ -7,6 +7,7 @@
       href="node_modules/modern-normalize/modern-normalize.css"
     />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +19,9 @@
   <body>
     <!--Header section-->
     <header class="header">
+      <div class="header__logo__mobile">
+        <a href="index.html"><span>Web</span>Studio</a>
+      </div>
       <div class="container">
         <div class="header__logo">
           <a href="index.html"><span>Web</span>Studio</a>
@@ -46,14 +50,63 @@
               </svg>+1 212-772-4150</a>
         </div>
       </div>
+
+      <button class="js-open-menu button button-menu__open" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+      </button>
     </header>
+
+    <!-- Burger menu section -->
+    <div class="js-menu-container">
+      <div >
+        <button class="js-close-menu button button-menu__close">
+          <svg class="mobile-menu__close">
+            <use href="./images/icons.svg#icon-menu__close"/>
+          </svg>
+        </button>
+          <ul>
+            <li>
+              <a href="index.html">Studio</a>
+            </li>
+            <li>
+              <a href="portfolio.html">Portfolio</a>
+            </li>
+            <li>
+              <a href="contacts.html">Contacts</a>
+            </li>
+          </ul>
+      </div>
+      <div class="header__info">
+        <a href="mailto:info@devstudio.com" class="header__email">
+          <svg class="header__icon1">
+            <use href="./images/icons.svg#icon-envelope" />
+          </svg>info@devstudio.com</a>
+              
+          <a href="callto:+12127724150" class="header__phone">
+            <svg class="header__icon2">
+              <use href="./images/icons.svg#icon-smartphone" />
+            </svg>+1 212-772-4150</a>
+      </div>
+    </div>
 
     <!--Main section-->
       <!--Hero section-->
       <section class="hero-section">
         <div class="container">
           <h1 class="hero-section__title">
-            EFFECTIVE SOLUTIONS FOR<br />YOUR BUSINESS
+            EFFECTIVE SOLUTIONS <br class="mobile__hero__br"/> FOR<br class="desktop__hero__br"/> YOUR BUSINESS
           </h1>
           <button type="button" data-modal-open class="hero-section__booking booking-button">
             Request our service
@@ -330,51 +383,51 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__left">
-        <div class="footer__logo">
-          <a href="index.html"><span>Web</span>Studio</a>
+          <div class="footer__logo">
+            <a href="index.html"><span>Web</span>Studio</a>
+          </div>
+          <address class="footer__address">
+            <a href="http://maps.google.com/?q=695ParkAve,NY10065,USA"
+              ><span>695 Park Ave, NY 10065, USA</span></a
+            >
+            <br />
+            <a href="mailto:info@devstudio.com">info@devstudio.com</a> <br />
+            <a href="callto:+12127724150">+1 212-772-4150</a>
+          </address>
         </div>
-        <address class="footer__address">
-          <a href="http://maps.google.com/?q=695ParkAve,NY10065,USA"
-            ><span>695 Park Ave, NY 10065, USA</span></a
-          >
-          <br />
-          <a href="mailto:info@devstudio.com">info@devstudio.com</a> <br />
-          <a href="callto:+12127724150">+1 212-772-4150</a>
-        </address>
-        </div>
-        <div class="footer__right">
-          <h3 class="footer__title">FIND US ON</h3>
-              <ul class="footer__socials">
-                <li>
-                  <a href="">
-                    <svg class="social-icon">
-                      <use href="./images/icons.svg#icon-instagram"/>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <svg class="social-icon">
-                      <use href="./images/icons.svg#icon-twitter"/>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <svg class="social-icon">
-                      <use href="./images/icons.svg#icon-facebook"/>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <svg class="social-icon">
-                      <use href="./images/icons.svg#icon-linkedin"/>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-        </div>
+          <div class="footer__right">
+            <h3 class="footer__title">FIND US ON</h3>
+                <ul class="footer__socials">
+                  <li>
+                    <a href="">
+                      <svg class="social-icon">
+                        <use href="./images/icons.svg#icon-instagram"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <svg class="social-icon">
+                        <use href="./images/icons.svg#icon-twitter"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <svg class="social-icon">
+                        <use href="./images/icons.svg#icon-facebook"/>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <svg class="social-icon">
+                        <use href="./images/icons.svg#icon-linkedin"/>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+          </div>
         <div>
           <form name="footer-form" class="footer-form">
             <label class="footer-form__position">SUBSCRIBE TO THE NEWSLETTER
@@ -436,6 +489,7 @@
     </div>
 
 
-    <script src="./modal.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

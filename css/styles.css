@@ -245,6 +245,7 @@ button {
 .booking-button {
   background-color: var(--blue);
   color: var(--white);
+  font-family: var(--primary-font);
   font-size: 16px;
   font-weight: 700;
   line-height: 30px;
@@ -777,6 +778,10 @@ button {
   margin-top: 40px;
 }
 
+.modal-title br {
+  display: none;
+}
+
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -902,8 +907,12 @@ button {
 
 .js-menu-container {
   display: none;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--nero);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
 }
 
 .is-open {
@@ -916,6 +925,91 @@ button {
 
 .header__logo__mobile {
   display: none;
+}
+
+.button-menu__open {
+  background-color: inherit;
+  border: none;
+}
+
+.button-menu__open:hover,
+.button-menu__open:focus,
+.button-menu__close:hover,
+.button-menu__close:focus {
+  color: var(--blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
+}
+
+.js-close-menu {
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.js-menu-container__navigation {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 46.88px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin-top: 48px;
+  margin-left: 40px;
+}
+
+.js-menu-container__navigation li {
+  padding-bottom: 32px;
+}
+
+.js-menu-container__info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 32px;
+  margin-left: 40px;
+  bottom: 134px;
+}
+
+.js-menu-container__email {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.13px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--grey);
+}
+
+.js-menu-container__phone {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 39.84px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--blue);
+}
+
+.js-menu-container__socials {
+  display: flex;
+  position: absolute;
+  bottom: 48px;
+  left: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--blue);
+}
+
+.js-menu-container__socials a:not(:last-child)::after {
+  content: '';
+  border: rgba(33, 33, 33, 0.2) 1px solid;
+  width: 22px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -937,12 +1031,12 @@ button {
   .header {
     display: flex;
     justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    padding: 15px;
   }
   .header__logo__mobile {
     display: block;
-  }
-
-  .button-menu__open {
   }
 
   .hero-section .container {
@@ -1048,5 +1142,184 @@ button {
   .footer-form svg {
     right: 37%;
     bottom: -60%;
+  }
+
+  [data-modal-content] {
+    height: 609px;
+    width: 450px;
+  }
+
+  .modal-title br {
+    display: block;
+  }
+
+  .modal-form__checked {
+    font-size: 12px;
+    line-height: 14.06px;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative;
+  }
+  .header {
+    max-width: 768px;
+    padding-left: 15px;
+  }
+
+  .header__info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    right: 15px;
+  }
+
+  .hero-section .container {
+    height: 400px;
+  }
+
+  .hero-section {
+    background-position: 50% 50%;
+    background-size: 768px 400px;
+  }
+
+  .mobile__hero__br {
+    display: block;
+  }
+
+  .desktop__hero__br {
+    display: none;
+  }
+  .hero-section__title {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 42px;
+    letter-spacing: 0.06em;
+  }
+
+  .about .container {
+    margin: 0 15px;
+  }
+
+  .about ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .about li {
+    width: 354px;
+  }
+
+  .about__icon {
+    width: 154px;
+  }
+
+  .what-we-do {
+    display: none;
+  }
+
+  .team__img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team__img div {
+    width: 352px;
+    height: 534px;
+  }
+
+  .team__img img {
+    width: 354px;
+    height: 374px;
+  }
+
+  .team__socials {
+    height: 68px;
+  }
+
+  .customers__title {
+    padding-top: 79px;
+  }
+
+  .customers {
+    height: auto;
+  }
+
+  .customers__icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .customers__icons li {
+    padding: 13px 59px;
+  }
+
+  .footer {
+    height: 464px;
+  }
+
+  .footer .container {
+    flex-wrap: wrap;
+    margin-top: -35px;
+    gap: 60px;
+  }
+
+  .footer__left {
+    text-align: center;
+    margin-left: 76px;
+  }
+
+  .footer__right {
+    position: absolute;
+    right: 89px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer-form__position {
+    text-align: center;
+    align-items: center;
+    margin-left: 166px;
+  }
+
+  .footer-form__input {
+    width: 450px;
+  }
+
+  .footer-form__btn {
+    position: inherit;
+    margin-top: 20px;
+    left: 47%;
+  }
+  .footer-form svg {
+    right: 23%;
+    bottom: -60%;
+  }
+
+  [data-modal-content] {
+    height: 609px;
+    width: 450px;
+  }
+
+  .modal-title br {
+    display: block;
+  }
+
+  .modal-form__checked {
+    font-size: 12px;
+    line-height: 14.06px;
+    letter-spacing: 0.03em;
   }
 }
